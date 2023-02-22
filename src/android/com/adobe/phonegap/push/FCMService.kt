@@ -75,6 +75,11 @@ class FCMService : FirebaseMessagingService() {
       PushConstants.COM_ADOBE_PHONEGAP_PUSH,
       MODE_PRIVATE
     )
+    
+  override fun onNewToken(token: String) {
+    super.onNewToken(token)
+    Log.d(TAG, "Refreshed token: $token")
+  }
 
   /**
    * Set Notification
